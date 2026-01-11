@@ -37,13 +37,13 @@ def most_busy_users(df):
     return x,af
 
 
-# def create_wordcloud(selected_users,df):
-#     if selected_users != 'Overall':
-#         df=df[df['user'] == selected_users]
+def create_wordcloud(selected_users,df):
+    if selected_users != 'Overall':
+        df=df[df['user'] == selected_users]
 
-#     wc=WordCloud(width=500,height=500,min_font_size=10,background_color='white')
-#     df_wc=wc.generate(df['message'].str.cat(sep=" "))
-#     return df_wc
+    wc=WordCloud(width=500,height=500,min_font_size=10,background_color='white')
+    df_wc=wc.generate(df['message'].str.cat(sep=" "))
+    return df_wc
 
 def most_common_words(selected_users,df):
     f=open("stop_hinglish.txt",'r')
